@@ -1,5 +1,5 @@
-﻿--final query fo one time execution 
---SELECT * INTO [Auto].[dbo].[Cars_Union] FROM [Auto].[dbo].[unicode_backup2];
+﻿--Create a backup 
+--SELECT * INTO [Auto].[dbo].[unicode_backup] FROM [Auto].[dbo].[Cars_Union];
 
 
 -- Without the GO statement, the new columns will not be added to the table. Alternatively, you can execute this statement separately with a selection.

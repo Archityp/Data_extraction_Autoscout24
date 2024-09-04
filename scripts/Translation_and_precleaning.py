@@ -20,7 +20,7 @@ def clean_csv(input_file, output_file):
         df_cleaned = df_cleaned.loc[:, ~df_cleaned.columns.str.contains('^Unnamed')]
         # Delete specific columns defined in the function
         df_cleaned = df_cleaned.drop(columns=columns_to_remove, errors='ignore')
-        df_cleaned.to_csv(output_file, index=False, encoding='utf-8')
+        df_cleaned.to_csv(output_file, index=False, encoding='utf-16')
         print(f"Data cleaning complete. Cleaned data saved to '{output_file}'.")
     except Exception as e:
         print(f"An error occurred in cleaning: {e}")
@@ -40,7 +40,7 @@ def translate_columns(input_file, output_file, translation_file="columns_transla
 
         df = pd.read_csv(input_file)
         df.rename(columns=lambda x: translation_dict.get(x, x), inplace=True)
-        df.to_csv(output_file, index=False)
+        df.to_csv(output_file , encoding='utf-16', index=False)
         print(f"Translation complete. Translated data saved to '{output_file}'.")
     except pd.errors.ParserError as e:
         print(f"Error reading CSV file: {e}")
@@ -126,7 +126,7 @@ def translate_data(input_file, output_file, cache_file="translation_cache.json",
             json.dump(translation_cache, f, indent=4)
 
         # Save the translated DataFrame to a new CSV file
-        df.to_csv(output_file, index=False)
+        df.to_csv(output_file, encoding='utf-16', index=False)
         print(f"Translation complete. Data saved to '{output_file}'.")
 
     except Exception as e:

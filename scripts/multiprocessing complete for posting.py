@@ -15,7 +15,7 @@ import json
 # Function to get a random proxy
 def get_random_proxy():
     try:
-        with open(r'D:\Data\Webscrape\proxies.json', 'r') as file:
+        with open(r'data', 'r') as file:
             proxies = json.load(file)
         if proxies:
             return random.choice(proxies)

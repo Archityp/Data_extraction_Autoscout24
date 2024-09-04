@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 # Usage
-folder_path = r'D:\Data\Webscrape\mercedes-benz'
+folder_path = r'Folder with your csv files'
 columns_to_remove = ['Komfort', 'Unterhaltung/Media', 'Sicherheit', 'Extras']
 
 def clean_and_remove_columns(df, columns_to_remove):

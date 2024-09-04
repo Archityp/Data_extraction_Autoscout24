@@ -25,12 +25,15 @@ def clean_csv(input_file, output_file):
     except Exception as e:
         print(f"An error occurred in cleaning: {e}")
 
-def translate_columns(input_file, output_file, translation_file="columns_translation.json"):
-    
+def translate_columns(input_file, output_file, translation_file="columns_translation.json", folder_path="data"):
+
+    # Combine the folder path with the translation file name
+    translation_file_path = os.path.join(folder_path, translation_file)  
+
     try:
         # Load the translation dictionary from the JSON file
-        if os.path.exists(translation_file):
-            with open(translation_file, 'r') as f:
+        if os.path.exists(translation_file_path):
+            with open(translation_file_path, 'r') as f:
                 translation_dict = json.load(f)
         else:
             raise FileNotFoundError(f"Translation file {translation_file} not found.")
@@ -44,7 +47,11 @@ def translate_columns(input_file, output_file, translation_file="columns_transla
     except Exception as e:
         print(f"An error occurred in translation: {e}")
 
-def translate_data(input_file, output_file, cache_file):
+def translate_data(input_file, output_file, cache_file="translation_cache.json", folder_path="data"):
+
+    # Combine the folder path with the cache file name
+    cache_file_path = os.path.join(folder_path, cache_file)
+
     # Initialize the translator
     translator = Translator()
 
@@ -53,8 +60,8 @@ def translate_data(input_file, output_file, cache_file):
     columns_as_whole = ['Body_type','Other_energy_source', 'Vehicle_type', 'Transmission', 'Exterior_color', 'Paintwork', 'Interior_color', 'Seller_info', 'Seller', 'Drive_type', 'Vehicle_condition', 'Interior_equipment']
 
     # Load translation cache if it exists
-    if os.path.exists(cache_file):
-        with open(cache_file, 'r') as f:
+    if os.path.exists(cache_file_path):
+        with open(cache_file_path, 'r') as f:
             translation_cache = json.load(f)
     else:
         translation_cache = {}

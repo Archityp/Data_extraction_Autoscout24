@@ -18,7 +18,7 @@ This is my data analysis project that scrapes, translates, aggregates, and clean
 ### Steps to Install
 1.	Clone the repository:
 ```bash
-    git clone https://github.com/yourusername/yourproject.git
+    git clone https://github.com/Archityp/Webscraping_Autoscout24.git
 ```
 2.	Navigate to the project directory:
   ```bash

@@ -68,13 +68,13 @@ This project consists of several components:
    After setting up the scraper, run the script. After collecting the first 50 offers, a new folder with CSV files will be created.
 
 5. **Union CSV Files**  
-   Once you have the scraped data, use the Union script to merge all CSV files into a single file.
+   Once you have the scraped data, use the Union_all_files script to merge all CSV files into a single file.
 
 6. **Translation and Aggregation**  
-   Finally, run the Translation and Aggregation script to translate the German data into English and aggregate the data for further analysis.
+   Finally, run the Translation_and_precleaning script to translate the German data into English and aggregate the data for further analysis.
 
 7. **SQL Cleaning**  
-   After generating the final CSV file, upload it to your database management system (e.g., SQL Server), create a backup using the first row and run your SQL queries for final data cleaning.
+   After generating the final CSV file, upload it to your database management system (e.g., SQL Server), create a backup using the first row and run Cleaning_and_aggregating SQL query for final data cleaning.
 
 ## Examples
 

@@ -281,7 +281,7 @@ def scrape_autoscout(year_range, price_range, price_step, csv_path, chunk_size=2
 if __name__ == "__main__":
     lock = Lock()
 
-    folder_path = rf'D:\Data\Webscrape\{brand_name}'
+    folder_path = rf'Your\folder\name\{brand_name}'
     os.makedirs(folder_path, exist_ok=True)
     tasks = [(yr, pr, price_step, os.path.join(folder_path, f'{brand_name}-year-{yr[1]}-{yr[0]}-price-{pr[0]}-{pr[1]}.csv'))
             for yr, pr in zip(year_ranges, price_ranges)]
